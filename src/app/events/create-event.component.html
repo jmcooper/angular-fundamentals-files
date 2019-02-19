@@ -5,7 +5,7 @@
     <div class="form-group" [ngClass]="{'error': newEventForm.controls.name?.invalid && newEventForm.controls.name?.touched}">
       <label for="eventName">Event Name:</label>
       <em *ngIf="newEventForm.controls.name?.invalid && (newEventForm.controls.name?.touched)">Required</em>
-      <input (ngModel)="name" name="name" required id="name" type="text" class="form-control" placeholder="Name of your event..." />
+      <input (ngModel)="name" name="name" required id="eventName" type="text" class="form-control" placeholder="Name of your event..." />
     </div>
     <div class="form-group" [ngClass]="{'error': newEventForm.controls.date?.invalid && newEventForm.controls.date?.touched}">
       <label for="eventDate">Event Date:</label>
@@ -22,7 +22,7 @@
       <em *ngIf="newEventForm.controls.price?.invalid && (newEventForm.controls.price?.touched)">Required</em>
       <input (ngModel)="price" name="price" required id="eventPrice" type="text" type="number" class="form-control" placeholder="event price..." />
     </div>
-    
+
     <div class="form-group">
       <label for="address">Event Location:</label>
       <input (ngModel)="address" name="address" id="address" type="text" class="form-control" placeholder="Address of event..." />
@@ -47,7 +47,7 @@
       <input (ngModel)="imageUrl" name="imageUrl" required pattern=".*\/.*.(png|jpg)" id="imageUrl" type="text" class="form-control" placeholder="url of image..." />
       <img />
     </div>
-    
+
     <button type="submit" class="btn btn-primary">Save</button>
     <button type="button" [disabled]="newEventForm.invalid" class="btn btn-default" (click)="cancel()">Cancel</button>
   </form>
